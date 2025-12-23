@@ -19,5 +19,5 @@ git merge dev
 
 #### End of Day
 git add .
-git commit -m "docs(frontend): update Day 1–2 documentation"
+git commit -m "docs(frontend): update README.md"
 git push origin riya/setup-frontend-roadmap
