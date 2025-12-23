@@ -38,81 +38,84 @@ frontend/
  │   ├── services/        # API service layer
  │   ├── styles/          # Global and module styles
  │   └── utils/           # Helper utilities
+glance
 
-⚙️ Tooling & Configuration
+🔧 2. Tooling & Configuration
 
 Initialized frontend using React + Vite
 
-Verified project build and development server
+Verified local development server and production build
 
-Configured ESLint to enforce coding standards
+Configured ESLint for consistent code quality
 
-Updated .gitignore to exclude node_modules, build outputs, and editor files
+Added .gitignore to exclude:
 
-🧩 UI Architecture Planning
+node_modules
 
-Designed high-level UI layout structure:
+build artifacts (dist/)
 
-Sidebar (Navigation)
+editor/system files
 
-Header (User actions & context)
+🧱 3. UI Architecture Planning
 
-Main Content Area
+Defined a scalable UI layout to support CRM workflows:
 
-Identified core CRM modules:
+Global Layout
+
+Header (user actions & context)
+
+Sidebar (navigation)
+
+Main content container
+
+Planned Core Modules
 
 Authentication
 
 Dashboard
 
-Leads Management
+Leads
 
-Clients Management
+Clients
 
-Billing & Invoicing
+Billing & Invoices
 
 Settings
 
-🔁 Reusable Component Strategy
+♻️ 4. Reusable Component Strategy
 
-Planned reusable UI components to ensure consistency:
+Planned reusable components to ensure UI consistency and maintainability:
 
 Buttons
 
-Forms & Inputs
+Input fields & forms
 
 Tables
 
 Modals
 
-Loaders & Alerts
+Loaders & alerts
 
-Defined component reusability guidelines for scalability
+Goal: reduce duplication and simplify future feature development.
 
-🔗 Backend Alignment
+🔗 5. Backend Alignment
 
-Reviewed backend API structure and database schema
+Reviewed backend API structure and DB schema
 
-Aligned frontend module naming with backend services
+Aligned frontend folder naming with backend services
 
-Planned service-layer structure for API integration
+Planned service-layer abstraction for API calls
 
-📝 Documentation
+📝 6. Documentation Standards
 
 Created structured frontend documentation for Day 1–2
 
-Followed backend-style technical documentation format
+Followed backend-style documentation practices
 
-Documented progress, decisions, and next steps
+Clearly documented:
 
-📦 Deliverables
+setup decisions
 
-Scalable frontend folder structure
+folder structure
 
-Verified React + Vite setup
-
-UI architecture and module planning
-
-Backend-aligned frontend roadmap
-
-Professional Day 1–2 status documentation
+next implementation steps
