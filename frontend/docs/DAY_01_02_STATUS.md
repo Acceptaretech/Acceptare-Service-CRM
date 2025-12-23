@@ -1,32 +1,41 @@
-# Day 1–2 Frontend Status Update
+# Day 1–2 Frontend Status
 
-**Branch:** riya/setup-frontend-roadmap  
-**Duration:** Day 1–2  
-**Role:** Frontend Lead  
+## Project
+Acceptare-Service-CRM
+
+## Role
+Frontend Lead
+
+---
+
+## Overview
+The initial frontend foundation has been established to ensure scalability, maintainability, and smooth integration with backend services.
+
+---
+
+## Objectives (Day 1–2)
+- Set up a clean and scalable frontend folder structure
+- Verify frontend tooling and configuration
+- Plan UI architecture aligned with backend APIs and database schema
+- Establish frontend documentation standards
 
 ---
 
 ## Work Completed
 
-- Defined frontend folder architecture.
-- Planned reusable common UI components.
-- Established UI naming and coding standards.
-- Finalized navigation flow for CRM modules.
-- Reviewed backend DB & API standards for UI alignment.
-- Prepared frontend foundation for team development.
+### 1. Frontend Project Structure
+Created a modular and scalable frontend directory structure to support future feature development.
 
----
+```text
+frontend/
+ ├── docs/                # Frontend documentation
+ ├── src/
+ │   ├── assets/          # Images, icons, static files
+ │   ├── components/      # Reusable UI components
+ │   ├── layouts/         # Common layouts (Header, Sidebar)
+ │   ├── pages/           # Page-level components
+ │   ├── routes/          # Route definitions
+ │   ├── services/        # API service layer
+ │   ├── styles/          # Global and module styles
+ │   └── utils/           # Helper utilities
 
-## Deliverables
-
-- Frontend documentation added.
-- UI standards communicated to the team.
-- Ready for feature-level UI development.
-
----
-
-## Status
-
-✔ Completed  
-✔ Aligned with backend roadmap  
-✔ Git workflow followed as per rule book
