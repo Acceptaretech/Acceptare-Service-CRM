@@ -1,6 +1,6 @@
 # Day 1–2 Frontend Status Update
 
-**Branch:** fe-riya  
+**Branch:** riya/setup-frontend-roadmap  
 **Duration:** Day 1–2  
 **Role:** Frontend Lead  
 

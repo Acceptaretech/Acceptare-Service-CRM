@@ -4,7 +4,7 @@
 
 - main → protected
 - dev → protected
-- fe-riya → frontend working branch
+-riya/setup-frontend-roadmap → frontend working branch
 
 ---
 
@@ -14,10 +14,10 @@
 ```bash
 git checkout dev
 git pull origin dev
-git checkout fe-riya
+git checkout riya/setup-frontend-roadmap
 git merge dev
 
 #### End of Day
 git add .
 git commit -m "docs(frontend): update Day 1–2 documentation"
-git push origin fe-riya
+git push origin riya/setup-frontend-roadmap
