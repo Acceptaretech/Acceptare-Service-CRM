@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ATPL CRM | Create Lead</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="page">
+    <div class="card">
+      <h2>Create Lead</h2>
+      <p class="subtitle">Add new lead to ATPL CRM</p>
+
+      <form id="leadForm">
+
+        <div class="input-group">
+          <input type="text" id="name" required>
+          <label>Full Name</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email">
+          <label>Email Address</label>
+        </div>
+
+        <div class="input-group">
+          <input type="number" id="phone">
+          <label>Phone Number</label>
+        </div>
+
+        <div class="select-group">
+          <label>Status</label>
+          <select id="status" required>
+            <option value="">Select Status</option>
+            <option value="New">New</option>
+            <option value="Contacted">Contacted</option>
+            <option value="Converted">Converted</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Save Lead</button>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
