@@ -2,50 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ATPL CRM | Create Lead</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Client Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-  <div class="page">
-    <div class="card">
-      <h2>Create Lead</h2>
-      <p class="subtitle">Add new lead to ATPL CRM</p>
+<div class="dashboard">
 
-      <form id="leadForm">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Client Panel</h2>
+    <ul>
+      <li class="active"><a href="index.html">dashboard</a></li>
+      <li class="active"><a href="project.html">My Projects</a></li>
+      <li class="active"><a href="invoices.html">invoices</a></li>
+      <li class="active"><a href="support.html">Support</a></li>
+      <li class="active"><a href="setting.html">Settings</a></li>
+      <li class="logout"><button>logout</button></li>
+    </ul>
+  </aside>
 
-        <div class="input-group">
-          <input type="text" id="name" required>
-          <label>Full Name</label>
-        </div>
+  <!-- Main Content -->
+  <main class="main">
 
-        <div class="input-group">
-          <input type="email" id="email">
-          <label>Email Address</label>
-        </div>
+    <!-- Topbar -->
+    <header class="topbar">
+      <h1>Welcome, Deepa 👋</h1>
+      <div class="profile">
+        <span>Client</span>
+      </div>
+    </header>
 
-        <div class="input-group">
-          <input type="number" id="phone">
-          <label>Phone Number</label>
-        </div>
+    <!-- Stats Cards -->
+    <section class="cards">
+      <div class="card">
+        <p>Active Projects</p>
+        <h2>3</h2>
+      </div>
+      <div class="card">
+        <p>Total Payment</p>
+        <h2>₹75,000</h2>
+      </div>
+      <div class="card">
+        <p>Pending Tasks</p>
+        <h2>5</h2>
+      </div>
+    </section>
 
-        <div class="select-group">
-          <label>Status</label>
-          <select id="status" required>
-            <option value="">Select Status</option>
-            <option value="New">New</option>
-            <option value="Contacted">Contacted</option>
-            <option value="Converted">Converted</option>
-          </select>
-        </div>
+    <!-- Project Table -->
+    <section class="table-section">
+      <h2>My Projects</h2>
+      <table>
+        <tr>
+          <th>Project</th>
+          <th>Status</th>
+          <th>Deadline</th>
+        </tr>
+        <tr>
+          <td>Website Design</td>
+          <td class="active-status">Active</td>
+          <td>30 Jan 2026</td>
+        </tr>
+        <tr>
+          <td>Dashboard UI</td>
+          <td class="pending-status">Pending</td>
+          <td>10 Feb 2026</td>
+        </tr>
+      </table>
+    </section>
 
-        <button type="submit" class="btn">Save Lead</button>
+  </main>
+  <!-- Charts Section -->
+<section class="charts">
 
-      </form>
-    </div>
+  <div class="chart-card">
+    <h3>Project Progress</h3>
+    <canvas id="projectChart"></canvas>
   </div>
 
-  <script src="app.js"></script>
+  <div class="chart-card">
+    <h3>Monthly Payments</h3>
+    <canvas id="paymentChart"></canvas>
+  </div>
+
+</section>
+
+
+</div>
+
+<script src="index.js"></script>
 </body>
 </html>
