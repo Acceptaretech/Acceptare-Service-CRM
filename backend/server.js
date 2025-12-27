@@ -8,6 +8,8 @@ const errorHandler = require("./src/middlewares/error.middleware");
 app.use(express.json());
 
 app.use("/api/auth", require("./src/routes/auth.routes"));
+app.use("/api/users", require("./src/routes/user.routes"));
+
 app.use("/api/clients", require("./src/routes/client.routes"));
 app.use("/api/leads", require("./src/routes/lead.routes"));
 
