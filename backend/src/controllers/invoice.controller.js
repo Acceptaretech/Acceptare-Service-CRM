@@ -1,0 +1,94 @@
+const Invoice = require("../models/Invoice.model");
+const Quotation = require("../models/Quotation.model");
+
+// Helper: invoice number generator
+const generateInvoiceNumber = async () => {
+  const count = await Invoice.countDocuments();
+  return `INV-${String(count + 1).padStart(5, "0")}`;
+};
+
+// CREATE INVOICE FROM QUOTATION
+const createInvoiceFromQuotation = async (req, res) => {
+  try {
+    const quotation = await Quotation.findById(req.params.quotationId);
+
+    if (!quotation) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Quotation not found" });
+    }
+
+    const invoiceNumber = await generateInvoiceNumber();
+
+    const invoice = await Invoice.create({
+      invoiceNumber,
+      quotation: quotation._id,
+      client: quotation.client,
+      subTotal: quotation.subTotal,
+      gstPercent: quotation.gstPercent,
+      gstAmount: quotation.gstAmount,
+      totalAmount: quotation.totalAmount,
+      createdBy: req.user._id,
+    });
+
+    res.status(201).json({
+      success: true,
+      message: "Invoice created successfully",
+      data: invoice,
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+// GET ALL INVOICES
+const getAllInvoices = async (req, res) => {
+  try {
+    const invoices = await Invoice.find()
+      .populate("client", "companyName email")
+      .populate("quotation")
+      .sort({ createdAt: -1 });
+
+    res.status(200).json({ success: true, data: invoices });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+// UPDATE PAYMENT STATUS
+const updatePayment = async (req, res) => {
+  try {
+    const { paidAmount } = req.body;
+
+    const invoice = await Invoice.findById(req.params.id);
+    if (!invoice) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Invoice not found" });
+    }
+
+    invoice.paidAmount += paidAmount;
+
+    if (invoice.paidAmount >= invoice.totalAmount) {
+      invoice.paymentStatus = "paid";
+    } else if (invoice.paidAmount > 0) {
+      invoice.paymentStatus = "partial";
+    }
+
+    await invoice.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Payment updated",
+      data: invoice,
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+module.exports = {
+  createInvoiceFromQuotation,
+  getAllInvoices,
+  updatePayment,
+};
