@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import "./layout.css";
 
-const MainLayout = () => {
+const MainLayout = ({ children }) => {
   const [openDeals, setOpenDeals] = useState(false);
   const [openReports, setOpenReports] = useState(false);
 
@@ -92,7 +92,14 @@ const MainLayout = () => {
           <span>Invoices</span>
         </NavLink>
       </aside>
-      </div>
+
+      {/* Main Content */}
+      <main className="main-content">
+        <Outlet />
+        {children}
+      </main>
+    </div>
   );
-};    
+};
+
 export default MainLayout;
