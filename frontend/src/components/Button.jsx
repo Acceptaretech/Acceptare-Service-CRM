@@ -1,8 +1,6 @@
-import React from "react";
-
 const Button = ({
+  label,
   type = "button",
-  text,
   onClick,
   disabled = false,
   className = "",
@@ -12,9 +10,9 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`btn ${className}`}
+      className={className}
     >
-      {text}
+      {label}
     </button>
   );
 };

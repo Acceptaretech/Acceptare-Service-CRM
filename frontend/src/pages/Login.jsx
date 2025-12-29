@@ -1,66 +1,50 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../styles/global.css";
+import { useState } from "react";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import { loginUser } from "../services/authServices";
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
+  // handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
+  // handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Temporary login logic (will be replaced by API later)
-    if (formData.email && formData.password) {
-      console.log("Login Successful:", formData);
-      navigate("/dashboard");
-    } else {
-      alert("Please enter email and password");
-    }
+    loginUser(formData); // service call
   };
 
   return (
-    <div className="login-container">
-      <h2 className="login-title">Acceptare CRM Login</h2>
+    <div>
+      <h2>Login</h2>
 
-      <form className="login-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <form onSubmit={handleSubmit}>
+        <Input
+          type="email"
+          name="email"
+          placeholder="Enter email"
+          value={formData.email}
+          onChange={handleChange}
+        />
 
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Enter your password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
+        <Input
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          value={formData.password}
+          onChange={handleChange}
+        />
 
-        <button type="submit" className="login-btn">
-          Login
-        </button>
+        <Button type="submit" label="Login" />
       </form>
     </div>
   );
