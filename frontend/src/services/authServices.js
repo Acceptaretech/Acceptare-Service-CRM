@@ -1,3 +1,6 @@
 export const loginUser = (data) => {
-  console.log("Login data:", data);
+  if (data.email && data.password) {
+    localStorage.setItem("isAuthenticated", "true");
+    console.log("Login successful");
+  }
 };
