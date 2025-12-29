@@ -148,5 +148,3 @@ Integrate APIs with backend services
 Enhance UI/UX styling
 
 Add form validation and error handling
-
-Implement role-based views and authentication flows
