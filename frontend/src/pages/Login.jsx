@@ -24,11 +24,35 @@ const Login = () => {
     } else {
       alert("Invalid credentials");
     }
+  }
+
+import Input from "../components/Input";
+import Button from "../components/Button";
+import { loginUser } from "../services/authServices";
+
+const Login = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  // handle input change
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // handle form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    loginUser(formData); // service call
   };
 
   return (
-    <div className="login-container">
-      <h2 className="login-title">Acceptare CRM Login</h2>
+    <div>
+      <h2>Login</h2>
 
       <form className="login-form" onSubmit={handleLogin}>
         <div className="form-group">
@@ -52,13 +76,30 @@ const Login = () => {
             required
           />
         </div>
+        </form>
+      <form onSubmit={handleSubmit}>
+        <Input
+          type="email"
+          name="email"
+          placeholder="Enter email"
+          value={formData.email}
+          onChange={handleChange}
+        />
 
-        <button type="submit" className="login-btn">
-          Login
-        </button>
+        <Input
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+
+        <Button type="submit" label="Login" />
       </form>
     </div>
   );
+
 };
+
 
 export default Login;
