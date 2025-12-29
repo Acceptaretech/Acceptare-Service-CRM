@@ -2,16 +2,38 @@ const mongoose = require("mongoose");
 
 const clientSchema = new mongoose.Schema(
   {
-    companyName: { type: String, required: true },
-    contactPerson: String,
-    email: String,
-    phone: String,
-    gst: String,
-    address: String,
+    companyName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    contactPerson: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      lowercase: true,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    gst: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
     status: {
       type: String,
       enum: ["active", "inactive"],
       default: "active",
+    },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   { timestamps: true }
