@@ -1,5 +1,27 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+
+//const Login = () => {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    login();
+    navigate("/dashboard");
+  };
+
+  return 
+    <form onSubmit={handleLogin}>
+      <button type="submit">Login</button>
+    </form>
+  import { useState } from "react";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import { loginUser } from "../services/authServices";
+ origin/main
 
 const Login = () => {
   const navigate = useNavigate();
@@ -55,4 +77,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+ export default Login;
