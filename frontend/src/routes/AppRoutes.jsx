@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Layout
 import MainLayout from "../layouts/MainLayout";
@@ -11,9 +11,11 @@ import InvoiceList from "../pages/InvoiceList";
 import LeadGroups from "../pages/LeadGroups";
 import ProtectedRoute from "./ProtectedRoute";
 
+import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import LeadGroups from "../pages/LeadGroups";
+import InvoiceList from "../pages/InvoiceList";
 
 import ProtectedRoute from "./ProtectedRoute";
 
