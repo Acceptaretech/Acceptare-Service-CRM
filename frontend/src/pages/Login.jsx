@@ -25,12 +25,12 @@ const Login = () => {
       alert("Invalid credentials");
     }
   }
-
+} 
 import Input from "../components/Input";
 import Button from "../components/Button";
 import { loginUser } from "../services/authServices";
 
-const Login = () => {
+const Logi = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
