@@ -11,7 +11,13 @@ import InvoiceList from "../pages/InvoiceList";
 import LeadGroups from "../pages/LeadGroups";
 import ProtectedRoute from "./ProtectedRoute";
 
-function AppRoutes() {
+import Login from "../pages/Login";
+import Dashboard from "../pages/Dashboard";
+import LeadGroups from "../pages/LeadGroups";
+
+import ProtectedRoute from "./ProtectedRoute";
+
+const AppRoutes = () => {
   return (
     <Routes>
       {/* Public Routes */}
@@ -32,7 +38,7 @@ function AppRoutes() {
       </Route>
     </Routes>
   );
-}
+};
 
 export default AppRoutes;
 
