@@ -1,24 +1,21 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
+import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import LeadGroups from "../pages/LeadGroups";
+import InvoiceList from "../pages/InvoiceList";
 
 import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* Default Route */}
-      <Route path="/" element={<Navigate to="/login" />} />
-
-      {/* Login */}
       <Route path="/login" element={<Login />} />
 
-      {/* Dashboard (Protected) */}
       <Route
-        path="/dashboard"
+        path="/"
         element={
           <ProtectedRoute>
             <Dashboard />
@@ -26,9 +23,8 @@ const AppRoutes = () => {
         }
       />
 
-      {/* Lead Groups (Protected) */}
       <Route
-        path="/lead-groups"
+        path="/leads"
         element={
           <ProtectedRoute>
             <LeadGroups />
@@ -36,8 +32,14 @@ const AppRoutes = () => {
         }
       />
 
-      {/* Fallback */}
-      <Route path="*" element={<Navigate to="/dashboard" />} />
+      <Route
+        path="/invoices"
+        element={
+          <ProtectedRoute>
+            <InvoiceList />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 };
