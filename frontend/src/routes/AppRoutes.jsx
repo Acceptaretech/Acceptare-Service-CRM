@@ -5,17 +5,19 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import LeadGroups from "../pages/LeadGroups";
-import InvoiceList from "../pages/InvoiceList";
 
 import ProtectedRoute from "./ProtectedRoute";
 
 const AppRoutes = () => {
   return (
     <Routes>
+      {/* Public Routes */}
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
 
+      {/* Protected Routes */}
       <Route
-        path="/"
+        path="/dashboard"
         element={
           <ProtectedRoute>
             <Dashboard />
@@ -24,19 +26,10 @@ const AppRoutes = () => {
       />
 
       <Route
-        path="/leads"
+        path="/dashboard/lead-groups"
         element={
           <ProtectedRoute>
             <LeadGroups />
-          </ProtectedRoute>
-        }
-      />
-
-      <Route
-        path="/invoices"
-        element={
-          <ProtectedRoute>
-            <InvoiceList />
           </ProtectedRoute>
         }
       />

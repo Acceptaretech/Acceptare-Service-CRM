@@ -1,48 +1,58 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login() {
+const Login = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
+
     console.log("Email:", email);
     console.log("Password:", password);
+
+    // Fake auth (for frontend testing)
+    if (email === "admin@crm.com" && password === "123456") {
+      localStorage.setItem("isAuthenticated", "true");
+      navigate("/dashboard/lead-groups"); // 👈 VERY IMPORTANT
+    } else {
+      alert("Invalid credentials");
+    }
   };
 
   return (
-    <div style={{ padding: "40px" }}>
+    <div style={{ padding: "2rem" }}>
       <h2>Login</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin}>
         <div>
-          <label>Email</label><br />
+          <label>Email</label>
+          <br />
           <input
             type="email"
-            placeholder="Enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
-        <br />
-
-        <div>
-          <label>Password</label><br />
+        <div style={{ marginTop: "1rem" }}>
+          <label>Password</label>
+          <br />
           <input
             type="password"
-            placeholder="Enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
-        <br />
-
-        <button type="submit">Login</button>
+        <button style={{ marginTop: "1rem" }} type="submit">
+          Login
+        </button>
       </form>
     </div>
   );
-}
+};
 
 export default Login;
