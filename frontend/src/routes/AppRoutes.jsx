@@ -11,7 +11,7 @@ import InvoiceList from "../pages/InvoiceList";
 import LeadGroups from "../pages/LeadGroups";
 import ProtectedRoute from "./ProtectedRoute";
 
-const AppRoutes = () => {
+function AppRoutes() {
   return (
     <Routes>
       {/* Public Routes */}
@@ -32,7 +32,7 @@ const AppRoutes = () => {
       </Route>
     </Routes>
   );
-};
+}
 
 export default AppRoutes;
 
