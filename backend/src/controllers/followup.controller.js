@@ -34,6 +34,49 @@ const getAllFollowUps = async (req, res) => {
   }
 };
 
+// 🔥 GET TODAY FOLLOW-UPS
+const getTodayFollowUps = async (req, res) => {
+  try {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    const followUps = await FollowUp.find({
+      nextFollowUpDate: { $gte: today, $lt: tomorrow },
+      status: "pending",
+    });
+
+    res.status(200).json({
+      success: true,
+      data: followUps,
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+// 🔥 GET OVERDUE FOLLOW-UPS
+const getOverdueFollowUps = async (req, res) => {
+  try {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const followUps = await FollowUp.find({
+      nextFollowUpDate: { $lt: today },
+      status: "pending",
+    });
+
+    res.status(200).json({
+      success: true,
+      data: followUps,
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 // MARK FOLLOW-UP COMPLETED
 const markFollowUpCompleted = async (req, res) => {
   try {
@@ -61,5 +104,7 @@ const markFollowUpCompleted = async (req, res) => {
 module.exports = {
   createFollowUp,
   getAllFollowUps,
+  getTodayFollowUps,
+  getOverdueFollowUps,
   markFollowUpCompleted,
 };
