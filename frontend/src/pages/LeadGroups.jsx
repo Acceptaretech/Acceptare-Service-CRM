@@ -1,7 +1,7 @@
 import React from "react";
 
 const LeadGroups = () => {
-<<<<<<< HEAD
+
   return (
     <div style={{ padding: "2rem" }}>
       <h2>Lead Groups</h2>
@@ -22,7 +22,11 @@ const LeadGroups = () => {
             <td>24</td>
             <td>Active</td>
           </tr>
-=======
+          </tbody>
+          </table>
+          </div>
+  )
+
   const leadGroups = [
     {
       name: "Hot Leads",
@@ -51,27 +55,20 @@ const LeadGroups = () => {
   ];
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "2rem" }}>
       <h2>Lead Groups</h2>
 
-      <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          marginTop: "20px",
-        }}
-      >
+      <table border="1" cellPadding="10">
         <thead>
           <tr>
-            <th style={thStyle}>Group Name</th>
-            <th style={thStyle}>Description</th>
-            <th style={thStyle}>Total Leads</th>
-            <th style={thStyle}>Status</th>
-            <th style={thStyle}>Action</th>
+            <th>Group Name</th>
+            <th>Description</th>
+            <th>Total Leads</th>
+            <th>Status</th>
           </tr>
         </thead>
-
         <tbody>
+
           {leadGroups.map((group, index) => (
             <tr key={index}>
               <td style={tdStyle}>{group.name}</td>
@@ -83,15 +80,19 @@ const LeadGroups = () => {
               </td>
             </tr>
           ))}
->>>>>>> 7b7c823 (Day-11: implemented Lead Groups page with routing and sidebar navigation)
+
+          <tr>
+            <td>Hot Leads</td>
+            <td>High priority prospects</td>
+            <td>24</td>
+            <td>Active</td>
+          </tr>
         </tbody>
       </table>
     </div>
   );
 };
 
-<<<<<<< HEAD
-=======
 const thStyle = {
   borderBottom: "1px solid #ccc",
   padding: "10px",
@@ -112,5 +113,4 @@ const btnStyle = {
   cursor: "pointer",
 };
 
->>>>>>> 7b7c823 (Day-11: implemented Lead Groups page with routing and sidebar navigation)
 export default LeadGroups;

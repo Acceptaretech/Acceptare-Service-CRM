@@ -15,7 +15,6 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import LeadGroups from "../pages/LeadGroups";
-import InvoiceList from "../pages/InvoiceList";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -26,14 +25,11 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<Navigate to="/login" />} />
 
+
       {/* Protected Routes with MainLayout */}
-      <Route
-        element={
-          <ProtectedRoute>
-            <MainLayout />
-          </ProtectedRoute>
-        }
-      >
+      <Route></Route>
+
+      <Route path="/dashboard" element={ <ProtectedRoute><MainLayout /> </ProtectedRoute> } >
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/lead-groups" element={<LeadGroups />} />
         <Route path="/invoices" element={<InvoiceList />} />
