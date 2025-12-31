@@ -6,9 +6,16 @@ const connectDB = require("./src/config/db");
 const errorHandler = require("./src/middlewares/error.middleware");
 const amcReminderJob = require("./src/utils/amcReminder.service");
 const { startAutomationCron } = require("./src/utils/automationCron.service");
-
-// Middleware
+const helmet = require("helmet");
+const { apiLimiter } = require("./src/middlewares/rateLimit.middleware");
+const { auditLogger } = require("./src/middlewares/audit.middleware");
+// Security Middleware
+app.use(helmet()); // Security headers
 app.use(express.json());
+app.use(apiLimiter);  // Rate limiting
+app.use(auditLogger);   // Rate limiting
+// Middleware
+
 
 // Routes
 app.use("/api/auth", require("./src/routes/auth.routes"));

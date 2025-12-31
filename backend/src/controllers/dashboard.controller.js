@@ -1,3 +1,6 @@
+const Client = require("../models/Client.model");
+const Lead = require("../models/Lead.model");
+const FollowUp = require("../models/FollowUp.model");
 const Invoice = require("../models/Invoice.model");
 const Expense = require("../models/Expense.model");
 
@@ -7,7 +10,55 @@ const monthLabels = [
   "Jul","Aug","Sep","Oct","Nov","Dec"
 ];
 
+
+// ===============================
+// 🔥 DASHBOARD SUMMARY (CARDS)
+// ===============================
+const getDashboardSummary = async (req, res) => {
+  try {
+    const totalClients = await Client.countDocuments();
+    const totalLeads = await Lead.countDocuments();
+
+    const totalExpensesAgg = await Expense.aggregate([
+      { $group: { _id: null, total: { $sum: "$amount" } } },
+    ]);
+
+    const totalInvoicesAgg = await Invoice.aggregate([
+      { $group: { _id: null, total: { $sum: "$totalAmount" } } },
+    ]);
+
+    const pendingFollowUps = await FollowUp.countDocuments({
+      status: "pending",
+    });
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const overdueFollowUps = await FollowUp.countDocuments({
+      status: "pending",
+      nextFollowUpDate: { $lt: today },
+    });
+
+    res.status(200).json({
+      success: true,
+      data: {
+        totalClients,
+        totalLeads,
+        totalExpenses: totalExpensesAgg[0]?.total || 0,
+        totalInvoiceAmount: totalInvoicesAgg[0]?.total || 0,
+        pendingFollowUps,
+        overdueFollowUps,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+
+// ===============================
 // 🔥 MONTHLY SALES (INVOICE) TREND
+// ===============================
 const getMonthlySalesTrend = async (req, res) => {
   try {
     const data = await Invoice.aggregate([
@@ -31,7 +82,10 @@ const getMonthlySalesTrend = async (req, res) => {
   }
 };
 
+
+// ===============================
 // 🔥 MONTHLY EXPENSE TREND
+// ===============================
 const getMonthlyExpenseTrend = async (req, res) => {
   try {
     const data = await Expense.aggregate([
@@ -55,7 +109,10 @@ const getMonthlyExpenseTrend = async (req, res) => {
   }
 };
 
+
+// ===============================
 // 🔥 SALES VS EXPENSE (MONTHLY)
+// ===============================
 const getSalesVsExpense = async (req, res) => {
   try {
     const sales = await Invoice.aggregate([
@@ -92,7 +149,9 @@ const getSalesVsExpense = async (req, res) => {
   }
 };
 
+
 module.exports = {
+  getDashboardSummary,
   getMonthlySalesTrend,
   getMonthlyExpenseTrend,
   getSalesVsExpense,
