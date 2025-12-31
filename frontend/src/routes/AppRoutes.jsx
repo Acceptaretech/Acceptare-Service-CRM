@@ -15,8 +15,8 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import LeadGroups from "../pages/LeadGroups";
-
 import ProtectedRoute from "./ProtectedRoute";
+import MainLayout from "../layouts/MainLayout";
 
 const AppRoutes = () => {
   return (

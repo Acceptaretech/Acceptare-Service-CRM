@@ -5,13 +5,13 @@ import { loginUser } from "../services/authService";
 import "../styles/global.css";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const { login } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log("Email:", email);
@@ -105,6 +105,5 @@ const Logi = () => {
   );
 
 };
-
 
 export default Login;
