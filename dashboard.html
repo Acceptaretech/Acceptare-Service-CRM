@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRM Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>CRM Pro</h2>
+  <a>Dashboard</a>
+  <a>Customers</a>
+  <a>Leads</a>
+  <a>Reports</a>
+  <a onclick="logout()">Logout</a>
+</div>
+
+<div class="main">
+
+  <div class="topbar">
+    <h1>Dashboard</h1>
+    <span class="user">Admin</span>
+  </div>
+
+  <div class="kpi">
+    <div class="kpi-card blue">
+      <h3>Customers</h3>
+      <p>124</p>
+      <span>+12%</span>
+    </div>
+
+    <div class="kpi-card green">
+      <h3>Leads</h3>
+      <p>86</p>
+      <span>+8%</span>
+    </div>
+
+    <div class="kpi-card purple">
+      <h3>Revenue</h3>
+      <p>$32,500</p>
+      <span>+18%</span>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h3>Monthly Revenue</h3>
+      <canvas id="revenueChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+      <h3>Leads vs Customers</h3>
+      <canvas id="leadChart"></canvas>
+    </div>
+  </div>
+
+  <div class="table-card">
+    <h3>Recent Customers</h3>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Ayush Kumar Singh</td>
+        <td>ayush@email.com</td>
+        <td><span class="badge active">Active</span></td>
+      </tr>
+      <tr>
+        <td>Sakshi Kumari</td>
+        <td>sakshi@email.com</td>
+        <td><span class="badge inactive">Inactive</span></td>
+      </tr>
+      <tr>
+        <td>Anjali Singh</td>
+        <td>anjali@email.com</td>
+        <td><span class="badge active">Active</span></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
