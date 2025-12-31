@@ -24,6 +24,7 @@ app.use("/api/dashboard", require("./src/routes/dashboard.routes"));
 app.use("/api/automation-rules", require("./src/routes/automation.routes"));
 app.use("/api/client-auth", require("./src/routes/clientAuth.routes"));
 app.use("/api/client-portal", require("./src/routes/clientPortal.routes"));
+app.use("/api/integrations", require("./src/routes/integration.routes"));
 
 
 // Error handler
