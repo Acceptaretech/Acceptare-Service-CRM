@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./auth.css";
 function Login() {
   return (
@@ -23,6 +24,10 @@ function Login() {
           placeholder="Enter your password"
           className="input"
         />
+        <Link to="/forgot-password" className="forgot-link">
+  Forgot Password?
+</Link>
+
         <button className="login-btn">Login</button>
         <p className="forgot">🔒 Forgot password?</p>
 

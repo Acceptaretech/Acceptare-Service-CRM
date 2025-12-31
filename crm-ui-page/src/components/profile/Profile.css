@@ -1,0 +1,41 @@
+.page {
+  min-height: 100vh;
+  background: hsl(220, 76%, 45%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 420px;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+.profile-row {
+  margin-bottom: 15px;
+}
+.profile-row span {
+  font-size: 13px;
+  color: gray;
+}
+.profile-row p {
+  font-size: 15px;
+  margin-top: 4px;
+}
+.setting-item {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+.btn {
+  width: 100%;
+  padding: 10px;
+  background: #4f6ef7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #3b5bdb;
+}

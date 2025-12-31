@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./auth.css";
 function ForgotPassword() {
   return (
@@ -15,7 +16,11 @@ function ForgotPassword() {
           placeholder="Your e-mail address"
           className="forgot-input"
         />
-        <button className="forgot-btn">Reset my Password</button>
+        <button className="forgot-btn">Reset my Password</button><Link to="/" className="forgot-link">
+  Back to Login
+</Link>
+
+
       </div>
       <p className="footer-text">
         © 2025 Reset Password Form. All rights reserved
