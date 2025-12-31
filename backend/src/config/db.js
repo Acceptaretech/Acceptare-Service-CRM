@@ -2,10 +2,14 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/crm";
-    
-    await mongoose.connect(MONGODB_URI);
-    
+    const mongoUri = process.env.MONGO_URI;
+
+    if (!mongoUri) {
+      throw new Error("MONGO_URI not found in environment variables");
+    }
+
+    await mongoose.connect(mongoUri);
+
     console.log("Database connected successfully");
   } catch (error) {
     console.error("Database connection error:", error);
