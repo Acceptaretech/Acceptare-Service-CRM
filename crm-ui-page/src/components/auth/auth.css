@@ -1,82 +1,70 @@
-body{
-    background: linear-gradient(to right #6a11cb, #2575fc);
-    display:flex;
-    align-items:center;  
-    justify-content:center;
-    height:100vh;
-    margin:0;   
-    font-family: 'Arial', sans-serif;
-}
-.login-page {
-    width: 100vw;
-  height: 100vh;
-  background: #0c50d8;
+/* Full page blue background */
+.forgot-wrapper {
+  min-height: 100vh;
+  background-color: #0a84d6;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-right: 80px;
-}
-.login-card {
-  width: 360px;
-  background: #ffffff;
-  padding: 35px 30px;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-.subtitle {
-  text-align: center;
-  color: gray;
+/* Top heading */
+.page-title {
+  color: white;
   margin-bottom: 20px;
 }
 
-.label {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 5px;
-  display: block;
+/* White card */
+.forgot-card {
+  background: white;
+  padding: 30px;
+  width: 350px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.input {
+.forgot-card h3 {
+  color: #0a84d6;
+  margin-bottom: 10px;
+}
+
+/* Description text */
+.forgot-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Email input */
+.forgot-input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #d1d5db;
-  border-radius: 5px;
-  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
-.login-btn {
+/* Button */
+.forgot-btn {
   width: 100%;
   padding: 10px;
-  background-color: #4f6ef7;
+  background-color: #0a84d6;
   color: white;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.login-btn:hover {
-  background-color: #3b5bdb;
-}
-
-.forgot {
-  text-align: center;
-  margin-top: 15px;
-  color: #4f6ef7;
+  border-radius: 3px;
   cursor: pointer;
   font-size: 14px;
 }
 
-.copyright {
-  text-align: center;
-  margin-top: 20px;
+.forgot-btn:hover {
+  background-color: #086bb0;
+}
+
+/* Footer */
+.footer-text {
+  color: white;
   font-size: 12px;
-  color: gray;
+  margin-top: 25px;
 }

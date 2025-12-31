@@ -1,7 +1,7 @@
-import Login from "./components/auth/Login";
+import ForgotPassword from "./components/auth/ForgotPassword";
 
 function App() {
-  return <Login />;
+  return <ForgotPassword />;
 }
 
 export default App;
