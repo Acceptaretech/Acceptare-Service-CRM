@@ -1,0 +1,25 @@
+.calling-container {
+  padding: 20px;
+}
+
+.call-form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.call-form input,
+.call-form select,
+.call-form textarea {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.call-form button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
