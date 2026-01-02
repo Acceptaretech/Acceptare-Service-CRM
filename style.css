@@ -103,3 +103,82 @@ th,td {
 }
 .active { background:#dcfce7; color:#166534 }
 .inactive { background:#fee2e2; color:#991b1b }
+
+
+/* DARK MODE */
+.dark {
+  background:#020617;
+  color:#e5e7eb;
+}
+
+.dark .main,
+.dark .chart-card,
+.dark .table-card,
+.dark .kpi-card {
+  background:#020617;
+}
+
+.dark table,
+.dark th,
+.dark td {
+  background:#020617;
+  color:#e5e7eb;
+}
+
+.toggle-btn {
+  background:none;
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+  margin-right:10px;
+}
+
+.table-header {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+}
+
+.table-header button {
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:6px 12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* MODAL */
+.modal {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-box {
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  width:300px;
+}
+
+.modal-box input,
+.modal-box select {
+  width:100%;
+  padding:8px;
+  margin:8px 0;
+}
+
+.modal-box button {
+  margin-top:10px;
+  width:100%;
+}
+
+.close {
+  background:#e5e7eb;
+  color:black;
+}

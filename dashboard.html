@@ -20,9 +20,13 @@
 <div class="main">
 
   <div class="topbar">
-    <h1>Dashboard</h1>
+  <h1>Dashboard</h1>
+  <div>
+    <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
     <span class="user">Admin</span>
   </div>
+</div>
+
 
   <div class="kpi">
     <div class="kpi-card blue">
@@ -57,29 +61,39 @@
   </div>
 
   <div class="table-card">
-    <h3>Recent Customers</h3>
-    <table>
+  <div class="table-header">
+    <h3>Customers</h3>
+    <button onclick="openModal()">+ Add Customer</button>
+  </div>
+
+  <table>
+    <thead>
       <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Status</th>
+        <th>Action</th>
       </tr>
-      <tr>
-        <td>Ayush Kumar Singh</td>
-        <td>ayush@email.com</td>
-        <td><span class="badge active">Active</span></td>
-      </tr>
-      <tr>
-        <td>Sakshi Kumari</td>
-        <td>sakshi@email.com</td>
-        <td><span class="badge inactive">Inactive</span></td>
-      </tr>
-      <tr>
-        <td>Anjali Singh</td>
-        <td>anjali@email.com</td>
-        <td><span class="badge active">Active</span></td>
-      </tr>
-    </table>
+    </thead>
+    <tbody id="customerTable"></tbody>
+  </table>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <h3 id="modalTitle">Add Customer</h3>
+    <input id="custName" placeholder="Name">
+    <input id="custEmail" placeholder="Email">
+    <select id="custStatus">
+      <option>Active</option>
+      <option>Inactive</option>
+    </select>
+    <button onclick="saveCustomer()">Save</button>
+    <button class="close" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
   </div>
 
 </div>
