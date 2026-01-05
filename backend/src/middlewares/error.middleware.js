@@ -1,10 +1,16 @@
-const errorHandler = (err, req, res, next) => {
-  console.error(err);
+module.exports = (err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
 
-  res.status(err.statusCode || 500).json({
+  // Log internal error (server side)
+  if (process.env.NODE_ENV !== "production") {
+    console.error("🔥 Error:", err.message);
+  }
+
+  res.status(statusCode).json({
     success: false,
-    message: err.message || "Internal Server Error",
+    message:
+      statusCode === 500
+        ? "Internal server error"
+        : err.message,
   });
 };
-
-module.exports = errorHandler;
