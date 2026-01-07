@@ -1,5 +1,6 @@
 # Day 1–2 Frontend Status
 
+<<<<<<< HEAD
 ## Project
 Acceptare-Service-CRM
 
@@ -18,6 +19,11 @@ The initial frontend foundation has been established to ensure scalability, main
 - Verify frontend tooling and configuration
 - Plan UI architecture aligned with backend APIs and database schema
 - Establish frontend documentation standards
+=======
+**Branch:** riya/setup-frontend-roadmap  
+**Duration:** Day 1–2  
+**Role:** Frontend Lead  
+>>>>>>> 07d53fd (docs(frontend): update Day 1–2 documentation)
 
 ---
 
