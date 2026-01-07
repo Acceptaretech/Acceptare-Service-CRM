@@ -1,6 +1,9 @@
 # Day 1–2 Frontend Status
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bbff4ea (docs(frontend): update Day 1–2 documentation)
 ## Project
 Acceptare-Service-CRM
 
@@ -19,11 +22,14 @@ The initial frontend foundation has been established to ensure scalability, main
 - Verify frontend tooling and configuration
 - Plan UI architecture aligned with backend APIs and database schema
 - Establish frontend documentation standards
+<<<<<<< HEAD
 =======
 **Branch:** riya/setup-frontend-roadmap  
 **Duration:** Day 1–2  
 **Role:** Frontend Lead  
 >>>>>>> 07d53fd (docs(frontend): update Day 1–2 documentation)
+=======
+>>>>>>> bbff4ea (docs(frontend): update Day 1–2 documentation)
 
 ---
 
@@ -43,4 +49,9 @@ frontend/
  │   ├── routes/          # Route definitions
  │   ├── services/        # API service layer
  │   ├── styles/          # Global and module styles
+<<<<<<< HEAD
  │   └── utils/           # Helper utilities
+=======
+ │   └── utils/           # Helper utilities
+
+>>>>>>> bbff4ea (docs(frontend): update Day 1–2 documentation)
