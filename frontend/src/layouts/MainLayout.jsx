@@ -93,13 +93,7 @@ const MainLayout = () => {
           <span>Invoices</span>
         </NavLink>
       </aside>
-
-      {/* MAIN CONTENT */}
-      <main className="main-content">
-        <Outlet />
-      </main>
-    </div>
+      </div>
   );
-};
-
+};    
 export default MainLayout;
