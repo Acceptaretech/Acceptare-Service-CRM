@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRM Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>CRM Pro</h2>
+  <a>Dashboard</a>
+  <a>Customers</a>
+  <a>Leads</a>
+  <a>Reports</a>
+  <a onclick="logout()">Logout</a>
+</div>
+
+<div class="main">
+
+  <div class="topbar">
+  <h1>Dashboard</h1>
+  <div>
+    <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+    <span class="user">Admin</span>
+  </div>
+</div>
+
+
+  <div class="kpi">
+    <div class="kpi-card blue">
+      <h3>Customers</h3>
+      <p>124</p>
+      <span>+12%</span>
+    </div>
+
+    <div class="kpi-card green">
+      <h3>Leads</h3>
+      <p>86</p>
+      <span>+8%</span>
+    </div>
+
+    <div class="kpi-card purple">
+      <h3>Revenue</h3>
+      <p>$32,500</p>
+      <span>+18%</span>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h3>Monthly Revenue</h3>
+      <canvas id="revenueChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+      <h3>Leads vs Customers</h3>
+      <canvas id="leadChart"></canvas>
+    </div>
+  </div>
+
+  <div class="table-card">
+  <div class="table-header">
+    <h3>Customers</h3>
+    <button onclick="openModal()">+ Add Customer</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="customerTable"></tbody>
+  </table>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <h3 id="modalTitle">Add Customer</h3>
+    <input id="custName" placeholder="Name">
+    <input id="custEmail" placeholder="Email">
+    <select id="custStatus">
+      <option>Active</option>
+      <option>Inactive</option>
+    </select>
+    <button onclick="saveCustomer()">Save</button>
+    <button class="close" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
