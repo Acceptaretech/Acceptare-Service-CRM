@@ -54,4 +54,78 @@ frontend/
 =======
  │   └── utils/           # Helper utilities
 
+<<<<<<< HEAD
 >>>>>>> bbff4ea (docs(frontend): update Day 1–2 documentation)
+=======
+2. Tooling & Configuration Validation
+
+Verified React + Vite setup
+
+Ensured project builds and runs correctly
+
+Validated ESLint configuration and project standards
+
+Confirmed .gitignore excludes node_modules and build artifacts
+
+3. UI Architecture Planning
+
+Planned UI structure based on CRM functional modules:
+
+Authentication (Login / Register)
+
+Dashboard
+
+Leads Management
+
+Clients Management
+
+Invoices & Billing
+
+Settings & Configuration
+
+Defined layout hierarchy:
+
+Sidebar navigation
+
+Header with user actions
+
+Central content container
+
+4. Reusable Component Strategy
+
+Identified common reusable UI components to maintain consistency:
+
+Buttons
+
+Form Inputs & Selects
+
+Tables
+
+Modals
+
+Loaders / Spinners
+
+Form wrappers & validation helpers
+
+5. Backend Alignment
+
+Reviewed backend API structure and DB schema
+
+Aligned frontend naming conventions with backend resources
+
+Planned service-layer abstraction for API calls
+
+6. Git & Documentation Practices
+
+Followed feature-branch-based Git workflow
+
+Added structured frontend documentation similar to backend
+
+Ensured daily progress is traceable via commits
+
+Deliverables
+
+Frontend base structure initialized
+
+Day 1–2 documentation added
+>>>>>>> 560a757 (docs(frontend): update Day 1–2 documentation)
