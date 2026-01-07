@@ -1,38 +1,43 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import "../../styles/common.css";
 
 const CallLog = () => {
-  const navigate = useNavigate();
+  const calls = [
+    { name: "Amit Sharma", number: "9876543210", status: "Completed" },
+    { name: "Neha Singh", number: "9123456789", status: "Pending" },
+  ];
 
   return (
-    <div style={{ padding: "20px", maxWidth: "500px" }}>
-      <h2>Call Log</h2>
+    <div className="page">
+      <h2>Call Logs</h2>
+      <p>Track all outbound and inbound calls</p>
 
-      <input placeholder="Client Name" /><br /><br />
-      <input placeholder="Phone Number" /><br /><br />
-      <select>
-        <option>Call Status</option>
-        <option>Connected</option>
-        <option>Not Answered</option>
-      </select><br /><br />
-      <textarea placeholder="Call Notes" /><br /><br />
-
-      <button onClick={() => navigate("/follow-up")}>
-        Save Call & Go to Follow-up
-      </button>
-
-      <hr style={{ margin: "20px 0" }} />
-
-      <h3>Quick Navigation</h3>
-
-      <button onClick={() => navigate("/expenses")}>
-        Go to Expense List
-      </button>
-      <br /><br />
-
-      <button onClick={() => navigate("/tasks")}>
-        Go to Task List
-      </button>
+      <table>
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {calls.map((call, i) => (
+            <tr key={i}>
+              <td>{call.name}</td>
+              <td>{call.number}</td>
+              <td>
+                <span className={`badge ${call.status.toLowerCase()}`}>
+                  {call.status}
+                </span>
+              </td>
+              <td>
+                <button className="btn">Call</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
