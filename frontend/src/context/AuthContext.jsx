@@ -1,10 +1,10 @@
 import React from "react";
 import { createContext, useContext, useState } from "react";
 
-const AuthContext = createContext();
+export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  
+  const [user, setUser] = useState(null);
 
   const login = (userData) => {
     setUser(userData);
@@ -12,11 +12,6 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-  };
-
-  const user = {
-    name: "Riya Kumari",
-    role: "Sales", 
   };
 
   return (

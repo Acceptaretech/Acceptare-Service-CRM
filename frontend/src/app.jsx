@@ -11,7 +11,7 @@ import Deals from "./pages/Deals";
 import Persons from "./pages/persons/Persons";
 import PersonDetail from "./pages/persons/PersonDetail";
 import Organizations from "./pages/Organizations";
-import LeadGroups from "./pages/leadgroups/LeadGroups";
+import LeadGroups from "./pages/groups/LeadGroups";
 
 import DealsPipeline from "./pages/deals/DealsPipeline";
 import OpenDeals from "./pages/deals/OpenDeals";
@@ -59,11 +59,11 @@ import TagsSettings from "./pages/settings/TagsSettings";
 
 function App() {
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <Routes>
+    
+              <Routes>
 
           {/* LOGIN */}
+          <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
 
           {/* MAIN DASHBOARD LAYOUT */}
@@ -137,8 +137,8 @@ function App() {
 </Route>
 
         </Routes>
-      </AuthProvider>
-    </BrowserRouter>
+      
+    
   );
 }
 

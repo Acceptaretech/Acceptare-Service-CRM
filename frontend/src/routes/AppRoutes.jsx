@@ -1,16 +1,15 @@
-<<<<<<< HEAD
-import React from "react";
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Layout
-import MainLayout from "../layout/MainLayout";
+import MainLayout from "../layouts/MainLayout";
+
 
 // Pages
-import Dashboard from "../pages/dashboard/Dashboard";
+import Dashboard from "../pages/Dashboard";
 import Persons from "../pages/persons/Persons";
-import Organizations from "../pages/organizations/Organizations";
-import FollowUps from "../pages/followups/FollowUps";
+import Organizations from "../pages/Organizations";
+import FollowUp from "../pages/followup/FollowUp";
 import Calls from "../pages/calls/Calls";
 import Tasks from "../pages/tasks/Tasks";
 import Expenses from "../pages/expenses/Expenses";
@@ -19,24 +18,20 @@ import OpenDeals from "../pages/deals/OpenDeals";
 import WonDeals from "../pages/deals/WonDeals";
 import LostDeals from "../pages/deals/LostDeals";
 import Leads from "../pages/Leads";
-import LeadGroups from "../pages/lead-groups/LeadGroups";
+import LeadGroups from "../pages/leadGroups/LeadGroups";
 
 // Reports
 import DealsReport from "../pages/reports/DealsReport";
 import ProposalReport from "../pages/reports/ProposalReport";
 import PipelineReport from "../pages/reports/PipelineReport";
 import PaymentHistory from "../pages/reports/PaymentHistory";
-=======
-import { Routes, Route } from "react-router-dom";
+
 import Login from "../pages/Login";
-import Dashboard from "../pages/Dashboard";
-import MainLayout from "../layouts/MainLayout";
->>>>>>> eb35c3e (feat(frontend): fix routing, render dashboard, and configure gitignore)
+
 
 const AppRoutes = () => {
   return (
     <Routes>
-<<<<<<< HEAD
       {/* MAIN LAYOUT */}
       <Route element={<MainLayout />}>
         {/* DEFAULT */}
@@ -78,18 +73,14 @@ const AppRoutes = () => {
         {/* Activities */}
         <Route path="/activities/list" element={<ActivityList />} />
         <Route path="/activities/calendar" element={<ActivityCalendar />} />
-=======
       <Route path="/" element={<Login />} />
       <Route element={<MainLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
->>>>>>> eb35c3e (feat(frontend): fix routing, render dashboard, and configure gitignore)
+      </Route>
       </Route>
     </Routes>
   );
 };
 
-<<<<<<< HEAD
 export default AppRoutes;
-=======
-export default AppRoutes;
->>>>>>> eb35c3e (feat(frontend): fix routing, render dashboard, and configure gitignore)
+

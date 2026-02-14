@@ -1,15 +1,15 @@
-<<<<<<< HEAD
-import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../services/authService";
 import { useAuth } from "../context/AuthContext";
+import "../styles/global.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const { login } = useAuth();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,10 +19,9 @@ const Login = () => {
       navigate("/dashboard");
     } catch (err) {
       alert("Invalid credentials");
-=======
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "../styles/global.css";
+    }
+  };
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -48,12 +47,13 @@ const Login = () => {
       navigate("/dashboard");
     } else {
       alert("Please enter email and password");
->>>>>>> eb35c3e (feat(frontend): fix routing, render dashboard, and configure gitignore)
+
     }
   };
 
   return (
-<<<<<<< HEAD
+    <div className="login-container">
+
     <form onSubmit={handleSubmit}>
       <h2>Login</h2>
       <input
@@ -70,7 +70,7 @@ const Login = () => {
       />
       <button type="submit">Login</button>
     </form>
-=======
+
     <div className="login-container">
       <h2 className="login-title">Acceptare CRM Login</h2>
 
@@ -104,8 +104,9 @@ const Login = () => {
         </button>
       </form>
     </div>
->>>>>>> eb35c3e (feat(frontend): fix routing, render dashboard, and configure gitignore)
+    </div>
+
   );
 };
-
+}
 export default Login;

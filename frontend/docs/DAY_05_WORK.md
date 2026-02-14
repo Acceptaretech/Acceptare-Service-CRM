@@ -1,5 +1,4 @@
 # Day 5 – Reusable UI Components & Service Layer
-<<<<<<< HEAD
 
 ## Objective
 To build reusable UI components and create a service layer for API communication in the CRM frontend.
@@ -26,5 +25,3 @@ To build reusable UI components and create a service layer for API communication
 - UI consistency improved across the application.
 - Cleaner and maintainable frontend architecture.
 - Ready base for integrating backend APIs.
-=======
->>>>>>> a600e06 (feat(frontend): Day 5 reusable UI components and service layer)
